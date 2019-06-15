@@ -13,5 +13,15 @@
     <link href="../lib/chessboard.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Demo: Initialize a chessboard.</h1>
+    <button id="trigger1">Demo 1</button>
+    <div id="board1" style="width: 400px"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#trigger1").on("click", function(evt) {
+                var board1 = Chessboard('board1', 'start')
+            });
+        });
+    </script>
 </body>
 </html>
