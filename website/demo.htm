@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,14 +13,29 @@
     <link href="../lib/chessboard.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Demo: Initialize a chessboard.</h1>
+    <h1>Demo 1: Initialize a chessboard.</h1>
     <button id="trigger1">Demo 1</button>
     <div id="board1" style="width: 400px"></div>
+
+    <h1>Demo 2: Customize with a powerful API.</h1>
+    <div id="board2" style="width: 400px"></div>
+    <button id="startBtn">Start Position</button>
+    <button id="clearBtn">Clear Board</button>
     <script type="text/javascript">
         $(document).ready(function () {
+            //demo 1
             $("#trigger1").on("click", function(evt) {
-                var board1 = Chessboard('board1', 'start')
+                var board1 = Chessboard("board1", "start")
             });
+
+            //demo 2
+            var board2 = Chessboard("board2", {
+                draggable: true,
+                dropOffBoard: "trash",
+                sparePieces: true
+            })
+            $("#startBtn").on("click", board2.start)
+            $("#clearBtn").on("click", board2.clear)
         });
     </script>
 </body>
